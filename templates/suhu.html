@@ -1,0 +1,85 @@
+{% extends 'base2.html' %}
+{% block title %} Monitoring Suhu{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+      <div class="col">
+          <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                              Kelembapan</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{humidity}} %</div>
+                      </div>
+                      <div class="col-auto">
+                          <i class="fas fa-home fa-2x text-gray-300"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Suhu
+                          </div>
+                          <div class="row no-gutters align-items-center">
+                              <div class="col-auto">
+                                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{temp_c}} C</div>
+                              </div>
+                              <div class="col">
+                                  <div class="progress progress-sm mr-2">
+                                      <div class="progress-bar bg-success" role="progressbar"
+                                          style="width: {{temp_c}}%" aria-valuenow="34" aria-valuemin="0"
+                                          aria-valuemax="100"></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-auto">
+                          <i class="fas fa-tree fa-2x text-gray-300"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                              Kategori</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">
+                             {% if temp_c >= 28 %} Panas
+                              {% else %} Normal
+                              {% endif %}
+                          </div>
+                      </div>
+                      <div class="col-auto">
+                          <i class="fas fa-cloud fa-2x text-gray-300"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <div>
+      </div>
+  </div>
+  <div class="card-body">
+        <div class="row">
+        <div class="col"></div>
+        <div class="col">
+        <img src="{{ image }}"/>
+          </div>
+        <div class="col"></div>
+        </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+ 
+
+  {% block chart %} {% endblock %}
+  {% endblock %}

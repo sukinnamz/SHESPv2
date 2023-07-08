@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Dashboard{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+
+  <!-- Content Row -->
+  <div class="row">
+
+  <div class="col">
+      <div class="small-box bg-primary">
+        <div class="inner">
+          <h3>Lampu</h3>
+          <p>Control & Monitoring ESP</p>
+        </div>
+        <div class="icon">
+          <i class="fas fa-spinner"></i>
+        </div>
+        <a href="/lampu" class="small-box-footer">
+          Click here <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+      
+    <div class="col">
+      <div class="small-box bg-light">
+        <div class="inner">
+          <h3>Suhu</h3>
+          <p>Monituring temperature & humidity</p>
+        </div>
+        <div class="icon">
+          <i class="fas fa-tree"></i>
+        </div>
+        <a href="/suhu" class="small-box-footer">
+          Click here <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+
+     
+
+
+    </div>
+      </div>
+
+  
+  {% block chart %} {% endblock %}
+  {% endblock %}
